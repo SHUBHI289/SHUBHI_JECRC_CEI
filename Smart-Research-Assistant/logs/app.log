@@ -1,0 +1,195 @@
+[2026-07-09 18:26:39] ERROR [SmartResearchAssistant:sanity_check.py:36] - Failed to import EmbeddingManager: cannot import name 'HuggingFaceEmbedembeddings' from 'langchain_community.embeddings' (D:\python installation\Lib\site-packages\langchain_community\embeddings\__init__.py)
+[2026-07-09 18:33:33] INFO [SmartResearchAssistant:embeddings.py:39] - Initializing embedding model: sentence-transformers/all-MiniLM-L6-v2 on device: cpu
+[2026-07-09 18:34:46] INFO [SmartResearchAssistant:embeddings.py:49] - Embedding model initialized successfully.
+[2026-07-09 18:34:46] INFO [SmartResearchAssistant:vector_database.py:31] - VectorStoreManager initialized for FAISS at D:\Smart-Research-Assistant\vector_store\faiss\sentence-transformers_all-MiniLM-L6-v2
+[2026-07-09 18:34:46] WARNING [SmartResearchAssistant:vector_database.py:85] - No FAISS index found at D:\Smart-Research-Assistant\vector_store\faiss\sentence-transformers_all-MiniLM-L6-v2
+[2026-07-09 18:34:46] ERROR [SmartResearchAssistant:app.py:338] - Error querying pipeline: The FAISS vector database for embedding model 'sentence-transformers/all-MiniLM-L6-v2' has not been built yet. Please upload documents and click 'Build Knowledge Base' first.
+[2026-07-09 18:35:01] INFO [SmartResearchAssistant:utils.py:92] - Successfully saved uploaded file to D:\Smart-Research-Assistant\uploads\NOVA_Research_Paper_Final.pdf
+[2026-07-09 18:35:01] INFO [SmartResearchAssistant:rag_pipeline.py:41] - Starting ingestion of 3 sources using FAISS and sentence-transformers/all-MiniLM-L6-v2
+[2026-07-09 18:35:01] INFO [SmartResearchAssistant:document_loader.py:23] - Loading PDF file: D:\Smart-Research-Assistant\uploads\NOVA_Research_Paper_Final.pdf
+[2026-07-09 18:35:02] INFO [SmartResearchAssistant:document_loader.py:38] - Successfully loaded 11 pages from PDF: NOVA_Research_Paper_Final.pdf
+[2026-07-09 18:35:02] INFO [SmartResearchAssistant:document_loader.py:78] - Loading content from URL: https://developer.mozilla.org/en-US/docs/Web/API/Web_Speech_API
+[2026-07-09 18:35:07] INFO [SmartResearchAssistant:document_loader.py:98] - Successfully loaded website content from https://developer.mozilla.org/en-US/docs/Web/API/Web_Speech_API
+[2026-07-09 18:35:07] INFO [SmartResearchAssistant:document_loader.py:78] - Loading content from URL: https://huggingface.co/learn/nlp-course
+[2026-07-09 18:35:09] INFO [SmartResearchAssistant:document_loader.py:98] - Successfully loaded website content from https://huggingface.co/learn/nlp-course
+[2026-07-09 18:35:09] INFO [SmartResearchAssistant:text_splitter.py:29] - Splitting 13 documents (chunk_size=1000, chunk_overlap=200)
+[2026-07-09 18:35:09] INFO [SmartResearchAssistant:text_splitter.py:36] - Generated 59 text chunks.
+[2026-07-09 18:35:09] INFO [SmartResearchAssistant:embeddings.py:39] - Initializing embedding model: sentence-transformers/all-MiniLM-L6-v2 on device: cpu
+[2026-07-09 18:35:15] INFO [SmartResearchAssistant:embeddings.py:49] - Embedding model initialized successfully.
+[2026-07-09 18:35:15] INFO [SmartResearchAssistant:vector_database.py:31] - VectorStoreManager initialized for FAISS at D:\Smart-Research-Assistant\vector_store\faiss\sentence-transformers_all-MiniLM-L6-v2
+[2026-07-09 18:35:15] INFO [SmartResearchAssistant:vector_database.py:41] - Creating/updating FAISS index with 59 document chunks.
+[2026-07-09 18:35:15] INFO [SmartResearchAssistant:vector_database.py:54] - Building a new FAISS index.
+[2026-07-09 18:35:22] INFO [SmartResearchAssistant:vector_database.py:58] - FAISS index successfully saved to D:\Smart-Research-Assistant\vector_store\faiss\sentence-transformers_all-MiniLM-L6-v2
+[2026-07-09 18:35:26] INFO [SmartResearchAssistant:rag_pipeline.py:76] - Ingestion completed successfully.
+[2026-07-09 18:35:26] INFO [SmartResearchAssistant:utils.py:109] - Cleared uploads directory.
+[2026-07-09 18:36:58] INFO [SmartResearchAssistant:embeddings.py:39] - Initializing embedding model: sentence-transformers/all-MiniLM-L6-v2 on device: cpu
+[2026-07-09 18:37:04] INFO [SmartResearchAssistant:embeddings.py:49] - Embedding model initialized successfully.
+[2026-07-09 18:37:04] INFO [SmartResearchAssistant:vector_database.py:31] - VectorStoreManager initialized for FAISS at D:\Smart-Research-Assistant\vector_store\faiss\sentence-transformers_all-MiniLM-L6-v2
+[2026-07-09 18:37:04] INFO [SmartResearchAssistant:retriever.py:29] - Extracting documents from vector store to build BM25 index.
+[2026-07-09 18:37:04] INFO [SmartResearchAssistant:retriever.py:39] - Building BM25Retriever with 59 document chunks.
+[2026-07-09 18:37:04] ERROR [SmartResearchAssistant:retriever.py:45] - Failed to initialize BM25 retriever: Could not import rank_bm25, please install with `pip install rank_bm25`.
+[2026-07-09 18:37:04] INFO [SmartResearchAssistant:retriever.py:73] - Retrieving top 4 documents for query='Summarize the document' using Hybrid search.
+[2026-07-09 18:37:04] INFO [SmartResearchAssistant:llm.py:34] - Initializing Gemini LLM wrapper (Primary: gemini-2.5-flash)
+[2026-07-09 18:37:04] WARNING [SmartResearchAssistant:llm.py:47] - Failed to initialize primary model 'gemini-2.5-flash' due to: There is no current event loop in thread 'ScriptRunner.scriptThread'.. Falling back to 'gemini-1.5-flash'.
+[2026-07-09 18:37:04] ERROR [SmartResearchAssistant:llm.py:62] - Failed fallback initialization of model 'gemini-1.5-flash': There is no current event loop in thread 'ScriptRunner.scriptThread'.
+[2026-07-09 18:37:04] ERROR [SmartResearchAssistant:app.py:338] - Error querying pipeline: There is no current event loop in thread 'ScriptRunner.scriptThread'.
+[2026-07-09 18:42:16] INFO [SmartResearchAssistant:utils.py:92] - Successfully saved uploaded file to D:\Smart-Research-Assistant\uploads\NOVA_Research_Paper_Final.pdf
+[2026-07-09 18:42:16] INFO [SmartResearchAssistant:rag_pipeline.py:41] - Starting ingestion of 2 sources using FAISS and sentence-transformers/all-MiniLM-L6-v2
+[2026-07-09 18:42:16] INFO [SmartResearchAssistant:document_loader.py:23] - Loading PDF file: D:\Smart-Research-Assistant\uploads\NOVA_Research_Paper_Final.pdf
+[2026-07-09 18:42:17] INFO [SmartResearchAssistant:document_loader.py:38] - Successfully loaded 11 pages from PDF: NOVA_Research_Paper_Final.pdf
+[2026-07-09 18:42:17] INFO [SmartResearchAssistant:document_loader.py:78] - Loading content from URL: https://developer.mozilla.org/en-US/docs/Web/API/Web_Speech_API
+[2026-07-09 18:42:19] INFO [SmartResearchAssistant:document_loader.py:98] - Successfully loaded website content from https://developer.mozilla.org/en-US/docs/Web/API/Web_Speech_API
+[2026-07-09 18:42:19] INFO [SmartResearchAssistant:text_splitter.py:29] - Splitting 12 documents (chunk_size=1000, chunk_overlap=200)
+[2026-07-09 18:42:19] INFO [SmartResearchAssistant:text_splitter.py:36] - Generated 41 text chunks.
+[2026-07-09 18:42:19] INFO [SmartResearchAssistant:embeddings.py:39] - Initializing embedding model: sentence-transformers/all-MiniLM-L6-v2 on device: cpu
+[2026-07-09 18:42:43] INFO [SmartResearchAssistant:embeddings.py:49] - Embedding model initialized successfully.
+[2026-07-09 18:42:43] INFO [SmartResearchAssistant:vector_database.py:31] - VectorStoreManager initialized for FAISS at D:\Smart-Research-Assistant\vector_store\faiss\sentence-transformers_all-MiniLM-L6-v2
+[2026-07-09 18:42:43] INFO [SmartResearchAssistant:vector_database.py:41] - Creating/updating FAISS index with 41 document chunks.
+[2026-07-09 18:42:43] INFO [SmartResearchAssistant:vector_database.py:46] - Loading existing FAISS index to append new documents.
+[2026-07-09 18:42:46] INFO [SmartResearchAssistant:vector_database.py:58] - FAISS index successfully saved to D:\Smart-Research-Assistant\vector_store\faiss\sentence-transformers_all-MiniLM-L6-v2
+[2026-07-09 18:42:47] INFO [SmartResearchAssistant:rag_pipeline.py:76] - Ingestion completed successfully.
+[2026-07-09 18:42:47] INFO [SmartResearchAssistant:utils.py:109] - Cleared uploads directory.
+[2026-07-09 18:43:16] INFO [SmartResearchAssistant:embeddings.py:39] - Initializing embedding model: sentence-transformers/all-MiniLM-L6-v2 on device: cpu
+[2026-07-09 18:43:22] INFO [SmartResearchAssistant:embeddings.py:49] - Embedding model initialized successfully.
+[2026-07-09 18:43:22] INFO [SmartResearchAssistant:vector_database.py:31] - VectorStoreManager initialized for FAISS at D:\Smart-Research-Assistant\vector_store\faiss\sentence-transformers_all-MiniLM-L6-v2
+[2026-07-09 18:43:22] INFO [SmartResearchAssistant:retriever.py:29] - Extracting documents from vector store to build BM25 index.
+[2026-07-09 18:43:22] INFO [SmartResearchAssistant:retriever.py:39] - Building BM25Retriever with 100 document chunks.
+[2026-07-09 18:43:22] ERROR [SmartResearchAssistant:retriever.py:45] - Failed to initialize BM25 retriever: Could not import rank_bm25, please install with `pip install rank_bm25`.
+[2026-07-09 18:43:22] INFO [SmartResearchAssistant:retriever.py:73] - Retrieving top 4 documents for query='tell me about natural language processing in this document
+' using Hybrid search.
+[2026-07-09 18:43:23] INFO [SmartResearchAssistant:llm.py:34] - Initializing Gemini LLM wrapper (Primary: gemini-2.5-flash)
+[2026-07-09 18:43:23] INFO [SmartResearchAssistant:llm.py:44] - Initialized ChatGoogleGenerativeAI with model=gemini-2.5-flash
+[2026-07-09 18:43:23] INFO [SmartResearchAssistant:rag_pipeline.py:237] - Streaming response from Gemini LLM.
+[2026-07-09 18:43:23] ERROR [SmartResearchAssistant:rag_pipeline.py:245] - Gemini LLM streaming failed: Invalid argument provided to Gemini: 400 API key not valid. Please pass a valid API key. [reason: "API_KEY_INVALID"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+, locale: "en-US"
+message: "API key not valid. Please pass a valid API key."
+]
+[2026-07-09 18:43:23] ERROR [SmartResearchAssistant:app.py:346] - Error querying pipeline: Error during response streaming: Invalid argument provided to Gemini: 400 API key not valid. Please pass a valid API key. [reason: "API_KEY_INVALID"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+, locale: "en-US"
+message: "API key not valid. Please pass a valid API key."
+]
+[2026-07-09 18:44:03] INFO [SmartResearchAssistant:utils.py:92] - Successfully saved uploaded file to D:\Smart-Research-Assistant\uploads\NOVA_Research_Paper_Final.pdf
+[2026-07-09 18:44:03] INFO [SmartResearchAssistant:rag_pipeline.py:41] - Starting ingestion of 2 sources using FAISS and sentence-transformers/all-MiniLM-L6-v2
+[2026-07-09 18:44:03] INFO [SmartResearchAssistant:document_loader.py:23] - Loading PDF file: D:\Smart-Research-Assistant\uploads\NOVA_Research_Paper_Final.pdf
+[2026-07-09 18:44:04] INFO [SmartResearchAssistant:document_loader.py:38] - Successfully loaded 11 pages from PDF: NOVA_Research_Paper_Final.pdf
+[2026-07-09 18:44:04] INFO [SmartResearchAssistant:document_loader.py:78] - Loading content from URL: https://developer.mozilla.org/en-US/docs/Web/API/Web_Speech_API
+[2026-07-09 18:44:05] INFO [SmartResearchAssistant:document_loader.py:98] - Successfully loaded website content from https://developer.mozilla.org/en-US/docs/Web/API/Web_Speech_API
+[2026-07-09 18:44:05] INFO [SmartResearchAssistant:text_splitter.py:29] - Splitting 12 documents (chunk_size=1000, chunk_overlap=200)
+[2026-07-09 18:44:05] INFO [SmartResearchAssistant:text_splitter.py:36] - Generated 41 text chunks.
+[2026-07-09 18:44:05] INFO [SmartResearchAssistant:embeddings.py:39] - Initializing embedding model: sentence-transformers/all-MiniLM-L6-v2 on device: cpu
+[2026-07-09 18:44:12] INFO [SmartResearchAssistant:embeddings.py:49] - Embedding model initialized successfully.
+[2026-07-09 18:44:12] INFO [SmartResearchAssistant:vector_database.py:31] - VectorStoreManager initialized for FAISS at D:\Smart-Research-Assistant\vector_store\faiss\sentence-transformers_all-MiniLM-L6-v2
+[2026-07-09 18:44:12] INFO [SmartResearchAssistant:vector_database.py:41] - Creating/updating FAISS index with 41 document chunks.
+[2026-07-09 18:44:12] INFO [SmartResearchAssistant:vector_database.py:46] - Loading existing FAISS index to append new documents.
+[2026-07-09 18:44:14] INFO [SmartResearchAssistant:vector_database.py:58] - FAISS index successfully saved to D:\Smart-Research-Assistant\vector_store\faiss\sentence-transformers_all-MiniLM-L6-v2
+[2026-07-09 18:44:14] INFO [SmartResearchAssistant:rag_pipeline.py:76] - Ingestion completed successfully.
+[2026-07-09 18:44:14] INFO [SmartResearchAssistant:utils.py:109] - Cleared uploads directory.
+[2026-07-09 18:44:26] INFO [SmartResearchAssistant:embeddings.py:39] - Initializing embedding model: sentence-transformers/all-MiniLM-L6-v2 on device: cpu
+[2026-07-09 18:44:32] INFO [SmartResearchAssistant:embeddings.py:49] - Embedding model initialized successfully.
+[2026-07-09 18:44:32] INFO [SmartResearchAssistant:vector_database.py:31] - VectorStoreManager initialized for FAISS at D:\Smart-Research-Assistant\vector_store\faiss\sentence-transformers_all-MiniLM-L6-v2
+[2026-07-09 18:44:32] INFO [SmartResearchAssistant:retriever.py:29] - Extracting documents from vector store to build BM25 index.
+[2026-07-09 18:44:32] INFO [SmartResearchAssistant:retriever.py:39] - Building BM25Retriever with 141 document chunks.
+[2026-07-09 18:44:32] ERROR [SmartResearchAssistant:retriever.py:45] - Failed to initialize BM25 retriever: Could not import rank_bm25, please install with `pip install rank_bm25`.
+[2026-07-09 18:44:32] INFO [SmartResearchAssistant:retriever.py:73] - Retrieving top 4 documents for query='tell me about natural language processing in this document' using Hybrid search.
+[2026-07-09 18:44:32] INFO [SmartResearchAssistant:llm.py:34] - Initializing Gemini LLM wrapper (Primary: gemini-2.5-flash)
+[2026-07-09 18:44:32] INFO [SmartResearchAssistant:llm.py:44] - Initialized ChatGoogleGenerativeAI with model=gemini-2.5-flash
+[2026-07-09 18:44:32] INFO [SmartResearchAssistant:rag_pipeline.py:237] - Streaming response from Gemini LLM.
+[2026-07-09 18:44:35] INFO [SmartResearchAssistant:memory.py:31] - Adding conversational turn to memory: User='tell me about natural language...' -> AI='Natural Language Processing (N...'
+[2026-07-09 18:44:35] INFO [SmartResearchAssistant:evaluator.py:29] - Initializing RAGAS wrappers for LLM and Embeddings.
+[2026-07-09 18:44:35] INFO [SmartResearchAssistant:evaluator.py:37] - RAGAS wrappers initialized successfully.
+[2026-07-09 18:44:35] INFO [SmartResearchAssistant:evaluator.py:54] - Running RAGAS evaluation for: question='tell me about natural language...'
+[2026-07-09 18:45:14] INFO [SmartResearchAssistant:embeddings.py:39] - Initializing embedding model: sentence-transformers/all-MiniLM-L6-v2 on device: cpu
+[2026-07-09 18:45:20] INFO [SmartResearchAssistant:embeddings.py:49] - Embedding model initialized successfully.
+[2026-07-09 18:45:20] INFO [SmartResearchAssistant:vector_database.py:31] - VectorStoreManager initialized for FAISS at D:\Smart-Research-Assistant\vector_store\faiss\sentence-transformers_all-MiniLM-L6-v2
+[2026-07-09 18:45:20] INFO [SmartResearchAssistant:retriever.py:29] - Extracting documents from vector store to build BM25 index.
+[2026-07-09 18:45:20] INFO [SmartResearchAssistant:retriever.py:39] - Building BM25Retriever with 141 document chunks.
+[2026-07-09 18:45:20] ERROR [SmartResearchAssistant:retriever.py:45] - Failed to initialize BM25 retriever: Could not import rank_bm25, please install with `pip install rank_bm25`.
+[2026-07-09 18:45:20] INFO [SmartResearchAssistant:retriever.py:73] - Retrieving top 4 documents for query='summarize the document' using Hybrid search.
+[2026-07-09 18:45:20] INFO [SmartResearchAssistant:llm.py:34] - Initializing Gemini LLM wrapper (Primary: gemini-2.5-flash)
+[2026-07-09 18:45:20] INFO [SmartResearchAssistant:llm.py:44] - Initialized ChatGoogleGenerativeAI with model=gemini-2.5-flash
+[2026-07-09 18:45:20] INFO [SmartResearchAssistant:rag_pipeline.py:237] - Streaming response from Gemini LLM.
+[2026-07-09 18:45:24] INFO [SmartResearchAssistant:memory.py:31] - Adding conversational turn to memory: User='summarize the document...' -> AI='This document describes the Hu...'
+[2026-07-09 18:45:24] INFO [SmartResearchAssistant:evaluator.py:29] - Initializing RAGAS wrappers for LLM and Embeddings.
+[2026-07-09 18:45:24] INFO [SmartResearchAssistant:evaluator.py:37] - RAGAS wrappers initialized successfully.
+[2026-07-09 18:45:24] INFO [SmartResearchAssistant:evaluator.py:54] - Running RAGAS evaluation for: question='summarize the document...'
+[2026-07-09 18:47:04] INFO [SmartResearchAssistant:utils.py:92] - Successfully saved uploaded file to D:\Smart-Research-Assistant\uploads\NOVA_Research_Paper_Final.pdf
+[2026-07-09 18:47:04] INFO [SmartResearchAssistant:rag_pipeline.py:41] - Starting ingestion of 2 sources using ChromaDB and sentence-transformers/all-MiniLM-L6-v2
+[2026-07-09 18:47:04] INFO [SmartResearchAssistant:document_loader.py:23] - Loading PDF file: D:\Smart-Research-Assistant\uploads\NOVA_Research_Paper_Final.pdf
+[2026-07-09 18:47:05] INFO [SmartResearchAssistant:document_loader.py:38] - Successfully loaded 11 pages from PDF: NOVA_Research_Paper_Final.pdf
+[2026-07-09 18:47:05] INFO [SmartResearchAssistant:document_loader.py:78] - Loading content from URL: https://developer.mozilla.org/en-US/docs/Web/API/Web_Speech_API
+[2026-07-09 18:47:06] INFO [SmartResearchAssistant:document_loader.py:98] - Successfully loaded website content from https://developer.mozilla.org/en-US/docs/Web/API/Web_Speech_API
+[2026-07-09 18:47:06] INFO [SmartResearchAssistant:text_splitter.py:29] - Splitting 12 documents (chunk_size=1000, chunk_overlap=200)
+[2026-07-09 18:47:06] INFO [SmartResearchAssistant:text_splitter.py:36] - Generated 41 text chunks.
+[2026-07-09 18:47:06] INFO [SmartResearchAssistant:embeddings.py:39] - Initializing embedding model: sentence-transformers/all-MiniLM-L6-v2 on device: cpu
+[2026-07-09 18:47:12] INFO [SmartResearchAssistant:embeddings.py:49] - Embedding model initialized successfully.
+[2026-07-09 18:47:12] INFO [SmartResearchAssistant:vector_database.py:31] - VectorStoreManager initialized for CHROMADB at D:\Smart-Research-Assistant\vector_store\chromadb\sentence-transformers_all-MiniLM-L6-v2
+[2026-07-09 18:47:12] INFO [SmartResearchAssistant:vector_database.py:41] - Creating/updating CHROMADB index with 41 document chunks.
+[2026-07-09 18:47:12] INFO [SmartResearchAssistant:vector_database.py:62] - Initializing ChromaDB.
+[2026-07-09 18:47:20] INFO [SmartResearchAssistant:vector_database.py:70] - ChromaDB index successfully saved/updated at D:\Smart-Research-Assistant\vector_store\chromadb\sentence-transformers_all-MiniLM-L6-v2
+[2026-07-09 18:47:20] INFO [SmartResearchAssistant:rag_pipeline.py:76] - Ingestion completed successfully.
+[2026-07-09 18:47:20] INFO [SmartResearchAssistant:utils.py:109] - Cleared uploads directory.
+[2026-07-09 18:47:30] ERROR [SmartResearchAssistant:evaluator.py:81] - RAGAS evaluation failed: 'EvaluationResult' object has no attribute 'get'
+[2026-07-09 18:47:56] INFO [SmartResearchAssistant:embeddings.py:39] - Initializing embedding model: sentence-transformers/all-MiniLM-L6-v2 on device: cpu
+[2026-07-09 18:47:56] ERROR [SmartResearchAssistant:evaluator.py:81] - RAGAS evaluation failed: 'EvaluationResult' object has no attribute 'get'
+[2026-07-09 18:48:03] INFO [SmartResearchAssistant:embeddings.py:49] - Embedding model initialized successfully.
+[2026-07-09 18:48:03] INFO [SmartResearchAssistant:vector_database.py:31] - VectorStoreManager initialized for CHROMADB at D:\Smart-Research-Assistant\vector_store\chromadb\sentence-transformers_all-MiniLM-L6-v2
+[2026-07-09 18:48:03] INFO [SmartResearchAssistant:retriever.py:29] - Extracting documents from vector store to build BM25 index.
+[2026-07-09 18:48:03] INFO [SmartResearchAssistant:retriever.py:39] - Building BM25Retriever with 41 document chunks.
+[2026-07-09 18:48:03] ERROR [SmartResearchAssistant:retriever.py:45] - Failed to initialize BM25 retriever: Could not import rank_bm25, please install with `pip install rank_bm25`.
+[2026-07-09 18:48:03] INFO [SmartResearchAssistant:retriever.py:73] - Retrieving top 4 documents for query='what is the leaving policy of the document' using Hybrid search.
+[2026-07-09 18:48:03] INFO [SmartResearchAssistant:llm.py:34] - Initializing Gemini LLM wrapper (Primary: gemini-2.5-flash)
+[2026-07-09 18:48:03] INFO [SmartResearchAssistant:llm.py:44] - Initialized ChatGoogleGenerativeAI with model=gemini-2.5-flash
+[2026-07-09 18:48:03] INFO [SmartResearchAssistant:rag_pipeline.py:237] - Streaming response from Gemini LLM.
+[2026-07-09 18:48:05] INFO [SmartResearchAssistant:memory.py:31] - Adding conversational turn to memory: User='what is the leaving policy of ...' -> AI='I couldn't find this informati...'
+[2026-07-09 18:48:05] INFO [SmartResearchAssistant:evaluator.py:29] - Initializing RAGAS wrappers for LLM and Embeddings.
+[2026-07-09 18:48:05] INFO [SmartResearchAssistant:evaluator.py:37] - RAGAS wrappers initialized successfully.
+[2026-07-09 18:48:05] INFO [SmartResearchAssistant:evaluator.py:54] - Running RAGAS evaluation for: question='what is the leaving policy of ...'
+[2026-07-09 18:48:41] INFO [SmartResearchAssistant:embeddings.py:39] - Initializing embedding model: sentence-transformers/all-MiniLM-L6-v2 on device: cpu
+[2026-07-09 18:48:47] INFO [SmartResearchAssistant:embeddings.py:49] - Embedding model initialized successfully.
+[2026-07-09 18:48:47] INFO [SmartResearchAssistant:vector_database.py:31] - VectorStoreManager initialized for CHROMADB at D:\Smart-Research-Assistant\vector_store\chromadb\sentence-transformers_all-MiniLM-L6-v2
+[2026-07-09 18:48:47] INFO [SmartResearchAssistant:retriever.py:29] - Extracting documents from vector store to build BM25 index.
+[2026-07-09 18:48:47] INFO [SmartResearchAssistant:retriever.py:39] - Building BM25Retriever with 41 document chunks.
+[2026-07-09 18:48:47] ERROR [SmartResearchAssistant:retriever.py:45] - Failed to initialize BM25 retriever: Could not import rank_bm25, please install with `pip install rank_bm25`.
+[2026-07-09 18:48:47] INFO [SmartResearchAssistant:retriever.py:73] - Retrieving top 4 documents for query='tell me about speech to text conversion process of this voice assistant' using Hybrid search.
+[2026-07-09 18:48:47] INFO [SmartResearchAssistant:llm.py:34] - Initializing Gemini LLM wrapper (Primary: gemini-2.5-flash)
+[2026-07-09 18:48:47] INFO [SmartResearchAssistant:llm.py:44] - Initialized ChatGoogleGenerativeAI with model=gemini-2.5-flash
+[2026-07-09 18:48:47] INFO [SmartResearchAssistant:rag_pipeline.py:237] - Streaming response from Gemini LLM.
+[2026-07-09 18:48:50] INFO [SmartResearchAssistant:memory.py:31] - Adding conversational turn to memory: User='tell me about speech to text c...' -> AI='The voice assistant, NOVA, con...'
+[2026-07-09 18:48:50] INFO [SmartResearchAssistant:evaluator.py:29] - Initializing RAGAS wrappers for LLM and Embeddings.
+[2026-07-09 18:48:50] INFO [SmartResearchAssistant:evaluator.py:37] - RAGAS wrappers initialized successfully.
+[2026-07-09 18:48:50] INFO [SmartResearchAssistant:evaluator.py:54] - Running RAGAS evaluation for: question='tell me about speech to text c...'
+[2026-07-09 18:49:43] INFO [SmartResearchAssistant:memory.py:41] - Clearing conversational memory.
+[2026-07-09 18:50:10] INFO [SmartResearchAssistant:vector_database.py:31] - VectorStoreManager initialized for CHROMADB at D:\Smart-Research-Assistant\vector_store\chromadb\sentence-transformers_all-MiniLM-L6-v2
+[2026-07-09 18:50:10] INFO [SmartResearchAssistant:vector_database.py:111] - Clearing vector store directory: D:\Smart-Research-Assistant\vector_store\chromadb\sentence-transformers_all-MiniLM-L6-v2
+[2026-07-09 18:50:10] ERROR [SmartResearchAssistant:vector_database.py:120] - Error deleting vector store files: [WinError 32] The process cannot access the file because it is being used by another process: 'D:\\Smart-Research-Assistant\\vector_store\\chromadb\\sentence-transformers_all-MiniLM-L6-v2\\826340a2-8e48-4447-90c3-eb7bd740ddfb\\data_level0.bin'
+[2026-07-09 18:51:11] ERROR [SmartResearchAssistant:evaluator.py:81] - RAGAS evaluation failed: 'EvaluationResult' object has no attribute 'get'
+[2026-07-09 18:51:11] ERROR [SmartResearchAssistant:evaluator.py:81] - RAGAS evaluation failed: 'EvaluationResult' object has no attribute 'get'
+[2026-07-09 18:51:25] INFO [SmartResearchAssistant:vector_database.py:31] - VectorStoreManager initialized for CHROMADB at D:\Smart-Research-Assistant\vector_store\chromadb\sentence-transformers_all-MiniLM-L6-v2
+[2026-07-09 18:51:25] INFO [SmartResearchAssistant:vector_database.py:111] - Clearing vector store directory: D:\Smart-Research-Assistant\vector_store\chromadb\sentence-transformers_all-MiniLM-L6-v2
+[2026-07-09 18:51:25] ERROR [SmartResearchAssistant:vector_database.py:120] - Error deleting vector store files: [WinError 32] The process cannot access the file because it is being used by another process: 'D:\\Smart-Research-Assistant\\vector_store\\chromadb\\sentence-transformers_all-MiniLM-L6-v2\\826340a2-8e48-4447-90c3-eb7bd740ddfb\\data_level0.bin'
+[2026-07-09 18:51:32] INFO [SmartResearchAssistant:vector_database.py:31] - VectorStoreManager initialized for CHROMADB at D:\Smart-Research-Assistant\vector_store\chromadb\BAAI_bge-small-en-v1.5
+[2026-07-09 18:51:32] INFO [SmartResearchAssistant:vector_database.py:111] - Clearing vector store directory: D:\Smart-Research-Assistant\vector_store\chromadb\BAAI_bge-small-en-v1.5
+[2026-07-09 18:51:32] INFO [SmartResearchAssistant:vector_database.py:116] - Successfully cleared vector store at D:\Smart-Research-Assistant\vector_store\chromadb\BAAI_bge-small-en-v1.5
+[2026-07-09 18:51:32] INFO [SmartResearchAssistant:rag_pipeline.py:91] - Database ChromaDB for model BAAI/bge-small-en-v1.5 cleared.
+[2026-07-09 18:51:43] INFO [SmartResearchAssistant:vector_database.py:31] - VectorStoreManager initialized for CHROMADB at D:\Smart-Research-Assistant\vector_store\chromadb\BAAI_bge-base-en-v1.5
+[2026-07-09 18:51:43] INFO [SmartResearchAssistant:vector_database.py:111] - Clearing vector store directory: D:\Smart-Research-Assistant\vector_store\chromadb\BAAI_bge-base-en-v1.5
+[2026-07-09 18:51:43] INFO [SmartResearchAssistant:vector_database.py:116] - Successfully cleared vector store at D:\Smart-Research-Assistant\vector_store\chromadb\BAAI_bge-base-en-v1.5
+[2026-07-09 18:51:43] INFO [SmartResearchAssistant:rag_pipeline.py:91] - Database ChromaDB for model BAAI/bge-base-en-v1.5 cleared.
+[2026-07-09 18:51:50] INFO [SmartResearchAssistant:vector_database.py:31] - VectorStoreManager initialized for FAISS at D:\Smart-Research-Assistant\vector_store\faiss\BAAI_bge-base-en-v1.5
+[2026-07-09 18:51:50] INFO [SmartResearchAssistant:vector_database.py:111] - Clearing vector store directory: D:\Smart-Research-Assistant\vector_store\faiss\BAAI_bge-base-en-v1.5
+[2026-07-09 18:51:50] INFO [SmartResearchAssistant:vector_database.py:116] - Successfully cleared vector store at D:\Smart-Research-Assistant\vector_store\faiss\BAAI_bge-base-en-v1.5
+[2026-07-09 18:51:50] INFO [SmartResearchAssistant:rag_pipeline.py:91] - Database FAISS for model BAAI/bge-base-en-v1.5 cleared.
+[2026-07-09 18:51:56] INFO [SmartResearchAssistant:vector_database.py:31] - VectorStoreManager initialized for FAISS at D:\Smart-Research-Assistant\vector_store\faiss\sentence-transformers_all-MiniLM-L6-v2
+[2026-07-09 18:51:56] INFO [SmartResearchAssistant:vector_database.py:111] - Clearing vector store directory: D:\Smart-Research-Assistant\vector_store\faiss\sentence-transformers_all-MiniLM-L6-v2
+[2026-07-09 18:51:56] INFO [SmartResearchAssistant:vector_database.py:116] - Successfully cleared vector store at D:\Smart-Research-Assistant\vector_store\faiss\sentence-transformers_all-MiniLM-L6-v2
+[2026-07-09 18:51:56] INFO [SmartResearchAssistant:rag_pipeline.py:91] - Database FAISS for model sentence-transformers/all-MiniLM-L6-v2 cleared.
